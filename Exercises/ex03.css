@@ -41,7 +41,7 @@ div#main {
     margin: 20px;
 }
 
-div#gallery {
+div#gallery {display: flex;
     background: rgb(228, 159, 190);
     padding: 20px;
     margin: 20px;
