@@ -19,3 +19,6 @@ H1 {background: cyan;
 .highlight_01 strong {background: rgb(169, 231, 231);
     color: rgb(0, 0, 0);
 } 
+
+A{color:aqua}
+A:hover {color:aqua}
