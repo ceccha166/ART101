@@ -34,3 +34,9 @@ A:hover {color:rgb(133, 217, 157)}
 IMG{
     width: 190px;
 }
+
+div#main {
+    background: rgb(228, 159, 190);
+    padding: 20px;
+    margin: 20px;
+}
