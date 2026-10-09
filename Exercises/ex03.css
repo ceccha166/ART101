@@ -12,7 +12,7 @@ UL {
 H1 {background: cyan;
 }
 
-.highlight_01
-
-
-
+.highlight_01 {
+    background: rgb(169, 231, 231);
+    color: rgb(0, 0, 0);
+}
