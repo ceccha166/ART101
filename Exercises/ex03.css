@@ -46,8 +46,3 @@ div#gallery {display: flex;
     padding: 20px;
     margin: 20px;
 }
-
-#gallery img {
-    width: 190px;
-    margin-right: 10px;
-}
