@@ -40,3 +40,9 @@ div#main {
     padding: 20px;
     margin: 20px;
 }
+
+div#gallery {
+    background: rgb(228, 159, 190);
+    padding: 20px;
+    margin: 20px;
+}
