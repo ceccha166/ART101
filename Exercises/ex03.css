@@ -30,3 +30,7 @@ A:hover {color:aqua}
 
 A{color:rgb(133, 217, 157)}
 A:hover {color:rgb(133, 217, 157)}
+
+IMG{
+    width: 190px;
+}
