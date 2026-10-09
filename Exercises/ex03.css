@@ -22,3 +22,8 @@ H1 {background: cyan;
 
 A{color:aqua}
 A:hover {color:aqua}
+
+.highlight_02{
+    background: rgb(133, 217, 157);
+    color: rgb(0, 0, 0);
+}
