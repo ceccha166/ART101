@@ -11,3 +11,10 @@ h3 {
 img {
     width: 190px;
 }
+
+#page {
+    max-width: 900px;
+    margin: 0 auto 0 auto;
+    background: white;
+    padding: 30px;
+}
