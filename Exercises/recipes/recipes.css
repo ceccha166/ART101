@@ -20,8 +20,8 @@ H1 {background: cyan;
     color: rgb(0, 0, 0);
 } 
 
-A{color:aqua}
-A:hover {color:aqua}
+A{color:rgb(152, 222, 222)}
+A:hover {color:rgb(168, 255, 255)}
 
 .highlight_02{
     background: rgb(133, 217, 157);
