@@ -52,4 +52,8 @@ HTML {background: rgb(114, 132, 230);
     margin: 20px;
 }
 
+/* homepage styles */
 
+#pan-home { position: relative; height: 80vh;} 
+
+#gallery { position: absolute; bottom: 10px; left: 20%; }
