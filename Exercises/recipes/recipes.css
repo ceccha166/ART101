@@ -1,0 +1,48 @@
+body {
+  background: rgb(219, 198, 239);
+  padding: 20px;
+  margin: 20px;
+  font-weight: normal;
+}
+
+UL {
+    color:rgb(151, 199, 245)
+}
+
+H1 {background: cyan;
+}
+
+.highlight_01 {
+    background: rgb(169, 231, 231);
+    color: rgb(0, 0, 0);
+}
+.highlight_01 strong {background: rgb(169, 231, 231);
+    color: rgb(0, 0, 0);
+} 
+
+A{color:aqua}
+A:hover {color:aqua}
+
+.highlight_02{
+    background: rgb(133, 217, 157);
+    color: rgb(0, 0, 0);
+}
+
+A{color:rgb(133, 217, 157)}
+A:hover {color:rgb(133, 217, 157)}
+
+IMG{
+    width: 190px;
+}
+
+div#main {
+    background: rgb(228, 159, 190);
+    padding: 20px;
+    margin: 20px;
+}
+
+div#gallery {display: flex;
+    background: rgb(228, 159, 190);
+    padding: 20px;
+    margin: 20px;
+}
