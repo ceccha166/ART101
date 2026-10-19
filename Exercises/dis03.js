@@ -27,7 +27,7 @@ $("#take-button").click(function() {
 
 $("#reset-button").click(function() {
     treats = 0;
-    $("#treat-count").html("Kaya has " + treats + " treats!");
+    $("#treat-count").html("Kaya has " + -treats + " treats!");
 });
 
 
