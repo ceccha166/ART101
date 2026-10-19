@@ -55,7 +55,7 @@ if (treats == 0) {
     $("#treat-count").html("Kaya has no treats!");
 } else if (treats < 0) {
     $("#treat-count").html("Kaya owes you " + -treats + " treats!");
-} else {
+} else { (treats > 0)
     $("#treat-count").html("Kaya has " + treats + " treats!");
 }
 
