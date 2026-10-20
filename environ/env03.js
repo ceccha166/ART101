@@ -3,8 +3,8 @@ let environmentTitle = "Luminary Beneath the Stars";
 
 // Things that exist in the Abyss
 let environmentElements = [
-    "Endless darkness",
-    "Glowing stars",
+    "Suspicious people",
+    "Blank white dark skies",
     "Unknown creatures",
     "Forgotten ruins"
 ];
