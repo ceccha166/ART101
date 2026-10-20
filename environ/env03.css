@@ -1,0 +1,159 @@
+
+
+body {
+    background-image: url(LBTS.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #29243b;
+}
+
+/* Main page section container */
+#page {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Main heading */
+h1 {
+    color: #3d2c59;
+    background: rgba(248, 249, 249, 0.95);
+    text-align: center;
+    padding: 15px;
+}
+
+/* Section headings */
+h2 {
+    color: #49366b;
+}
+
+/* Section 1: Environment and vibes */
+#environment {
+    background: rgba(240, 235, 240, 0.9);
+    color: #29243b;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+/* Stars */
+#stars {
+    font-size: 30px;
+    text-align: center;
+    color: #65538c;
+    letter-spacing: 8px;
+}
+
+/* Story introduction */
+#introduction {
+    color: #29243b;
+    line-height: 1.8;
+}
+
+/* Zone 2: Main character scene */
+#main-scene {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    background: rgba(209, 247, 255, 0.9);
+    color: #29243b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Individual characters */
+.character {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+}
+
+.character-title {
+    color: #49366b;
+    background: rgba(248, 249, 249, 0.95);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* Character images */
+.character-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Leo's image gallery */
+#gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#gallery img {
+    width: calc(50% - 5px);
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+/* Java Script */
+/* Zone 3: The Abyss Archive */
+#abyss-archive {
+    background: rgba(240, 235, 250, 0.95);
+    color: #29243b;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #a99acb;
+}
+
+#abyss-archive h2 {
+    color: #49366b;
+    letter-spacing: 2px;
+}
+
+#abyss-archive button {
+    background: #49366b;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    margin: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#abyss-archive button:hover {
+    background: #7864a5;
+    transform: scale(1.03);
+}
+
+#environment-output {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.7;
+    min-height: 60px;
+}
+
+#environment-output h3 {
+    color: #49366b;
+}
+
+#environment-output h4 {
+    color: #65538c;
+}
+
+#investigation-count {
+    color: #49366b;
+    font-weight: bold;
+    margin-top: 20px;
+}

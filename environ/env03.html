@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luminary Beneath the Stars</title>
+
+    <link href="env03.css" rel="stylesheet" type="text/css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="env03.js" defer></script>
+</head>
+
+<body>
+
+    <div id="page">
+
+        <h1>Welcome to the Abyss, MC...</h1>
+
+        <!-- Zone 1: Environment and atmosphere -->
+        <div id="environment">
+
+            <h2>Luminary Beneath the Stars</h2>
+
+            <p id="stars">✦ ✧ ★ ✧ ✦</p>
+
+            <p id="introduction">
+                You wake up in the mysterious Abyss with no idea how you got there.
+                After meeting Leo and Yuna, you join them on a journey to find a way
+                back home while uncovering the secrets of this strange world.
+                As you travel through the Abyss, you encounter dangerous creatures,
+                unfamiliar places, and clues about its mysterious past. Along the way,
+                you begin to realize that your arrival may not have been an accident.
+                Together, you must survive the Abyss and discover the truth behind
+                why you were brought there in the first place. Who knows...
+                could be something good or bad.
+            </p>
+
+        </div>
+
+        <!-- Zone 2: Character pictures -->
+        <div id="main-scene">
+
+            <div id="mc" class="character">
+
+                <p class="character-title">Character Sheet: MC Player</p>
+
+                <img src="MC Chara.jpeg"
+                     alt="MC Character Image"
+                     class="character-img">
+
+            </div>
+
+            <div id="leo" class="character">
+
+                <p class="character-title">Character Sheet: Leo</p>
+
+                <!-- Click this picture to reveal Leo's information -->
+                <img src="Leo Chara.jpeg"
+                     alt="Leo Character Image"
+                     class="character-img"
+                     id="leo-picture"
+                     style="cursor: pointer;">
+
+                <p><small>Click Leo's picture to learn more about him!</small></p>
+
+                <div id="gallery">
+                    <img src="Leo02.jpeg" alt="Leo image 2">
+                    <img src="Leo01.jpeg" alt="Leo image 1">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Zone 3: The Abyss Archive -->
+        <div id="abyss-archive">
+
+            <h2>✦ The Abyss Archive ✦</h2>
+
+            <p>
+                The Abyss holds secrets that even its inhabitants
+                do not fully understand. Choose what you want to investigate.
+            </p>
+
+            <button id="explore-button">Explore the Abyss</button>
+
+            <button id="character-button">Character Files</button>
+
+            <button id="secret-button">Reveal a Hidden Secret</button>
+
+            <div id="environment-output">
+                <p>Choose an option to uncover the mysteries of the Abyss...</p>
+            </div>
+
+            <p id="investigation-count">Investigations: 0</p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
