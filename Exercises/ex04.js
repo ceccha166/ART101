@@ -2,6 +2,15 @@
 
 let count = 0;
 
+let colors=["green", "orange", "brown", "yellow", "gold", "purple", "red", "pink"];
+
+
+// green, orange, brown, yellow, gold, purple, red, pink
+
+
+
+
+
 $("#needy-button").click( function() {
    count = count + 1;
    $("#needy-button").html("You clicked me " + count + " times");
@@ -13,3 +22,7 @@ $("#needy-button").click( function() {
    let color = "light blue";
    $("#needy-button").css("background-color", color);
 });
+
+buttonText="I was kicked " + count + "times";
+
+$("needy-button").html( buttonText );
