@@ -21,9 +21,5 @@ $("#needy-button").click( function() {
    $("#needy-button").html("You clicked me " + count + " times");
    let color = "light blue";
    $("#needy-button").css("background-color", color);
-   buttonText="I was kicked " + count + "times";
-
-$("needy-button").html( buttonText );
-
 });
 
