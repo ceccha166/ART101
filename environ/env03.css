@@ -9,7 +9,7 @@ body {
     color: #29243b;
 }
 
-/* Main page section container */
+/* Main page section */
 #page {
     max-width: 1000px;
     margin: 20px auto;
@@ -53,7 +53,7 @@ h2 {
     line-height: 1.8;
 }
 
-/* Zone 2: Main character scene */
+/* Section 2: Main character scene */
 #main-scene {
     display: flex;
     gap: 25px;
@@ -102,7 +102,7 @@ h2 {
     border-radius: 8px;
 }
 /* Java Script */
-/* Zone 3: The Abyss Archive */
+/* Section 3: The Abyss Archive */
 #abyss-archive {
     background: rgba(240, 235, 250, 0.95);
     color: #29243b;
