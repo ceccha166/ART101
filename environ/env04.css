@@ -1,0 +1,71 @@
+body {
+    background-color: #171329;
+    background-image: url("LBTS.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Georgia, serif;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+#page {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(20, 15, 40, 0.88);
+    border-radius: 15px;
+}
+
+h1 {
+    color: #d9c7ff;
+}
+
+h2 {
+    color: #c9b6ff;
+}
+
+#introduction {
+    line-height: 1.7;
+    padding: 15px;
+}
+
+#environment {
+    padding: 25px;
+    margin-top: 20px;
+    background-color: rgba(50, 40, 80, 0.8);
+    border-radius: 12px;
+    transition: background-color 0.5s;
+}
+
+#leo-image {
+    width: 220px;
+    max-width: 90%;
+    border-radius: 12px;
+    margin: 15px;
+}
+
+#environment-message {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    background-color: #70569e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9278c4;
+}
+
+a {
+    color: #d9c7ff;
+}
+

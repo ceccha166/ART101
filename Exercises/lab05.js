@@ -1,4 +1,3 @@
-
 function askNumber(whatNumber) {
     let userNumber = prompt("Guess 1-10?");
 
@@ -13,3 +12,4 @@ function askNumber(whatNumber) {
 $("#good-button").click(function () {
     askNumber(5);
 });
+
