@@ -41,3 +41,28 @@ button:hover {
     color: #241b2f;
     transform: rotate(-4deg);
 }
+
+h2 {
+    color: #ff9a3c;
+    font-size: 40px;
+    font-family: "Fredoka", sans-serif;
+}
+
+button {
+    background: #9264b7;
+    color: #ffffff;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 22px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    margin: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #ff9a3c;
+    color: #241b2f;
+    transform: rotate(-4deg);
+}

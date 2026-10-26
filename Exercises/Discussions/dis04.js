@@ -37,6 +37,11 @@ function updatePage() {
         treatWord = "treat";
     }
 
+    let toyWord = "toys";
+    if (kaya.toys.length === 1) {
+        toyWord = "toy";
+    }
+
     // TODO 3: Update the header
     $("#treat-count").html(
         kaya.name + " the " + kaya.costume +
@@ -47,7 +52,7 @@ function updatePage() {
     // Show how many toys Kaya has
     $("#toys").html(
         kaya.name + " has " + kaya.toys.length +
-        (kaya.toys.length === 1 ? " toy!" : " toys!")
+        " " + toyWord + "!"
     );
 }
 
