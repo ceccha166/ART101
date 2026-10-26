@@ -1,0 +1,29 @@
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color: darkblue;
+}
+
+button {
+    background-color: white;
+    padding: 12px 20px;
+    border: 2px solid darkblue;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: lightyellow;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
