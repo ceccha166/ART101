@@ -1,6 +1,7 @@
+
 let treats = 0;
 
-// NEW: an object that stores info about Kaya
+// Object that stores info about Kaya
 let kaya = {
     name: "Kaya",
     age: 2,
@@ -8,52 +9,75 @@ let kaya = {
     toys: ["ball"]
 };
 
-// NEW: arrays of moods and background colors (index 0, 1, 2)
+// Arrays of moods and background colors
+// Index 0 = hungry, index 1 = happy, index 2 = hyper
 let moods = ["hungry", "happy", "hyper"];
 let colors = ["#241b2f", "#3b2f4a", "#5a2e1f"];
 
 let mood = "";
 
-
-// both treat buttons run this after they change treats
+// Update the page when treats change
 function updatePage() {
 
-    // TODO 1: write an if / else if / else that sets mood:
-    //    5 or more treats  ->  moods[2]
-    //    1 to 4 treats     ->  moods[1]
-    //    0 or less         ->  moods[0]
-    // (hint: check the biggest number first!)
+    // TODO 1 & 2: Set mood and background color
+    if (treats >= 5) {
+        mood = moods[2];
+        $("body").css("background-color", colors[2]);
+    } else if (treats >= 1) {
+        mood = moods[1];
+        $("body").css("background-color", colors[1]);
+    } else {
+        mood = moods[0];
+        $("body").css("background-color", colors[0]);
+    }
 
-    // TODO 2: inside each part of your if, also change the background color:
-    //    $("body").css("background-color", colors[ ? ]);
-    //    (use the same number as the mood!)
+    // Optional: Fix grammar for treat/treats
+    let treatWord = "treats";
+    if (treats === 1) {
+        treatWord = "treat";
+    }
 
+    // TODO 3: Update the header
+    $("#treat-count").html(
+        kaya.name + " the " + kaya.costume +
+        " has " + treats + " " + treatWord +
+        " and is feeling " + mood + "!"
+    );
 
-    // TODO 3: change this line so the header says:
-    //    Kaya the witch has 3 treats and is feeling happy!
-    // use kaya.name and kaya.costume instead of typing them, and add the mood
-    $("#treat-count").html("Kaya has " + treats + " treats!");
-
-    // OPTIONAL (done early?): fix the grammar!
-    //    right now it says "Kaya the witch has 1 treats". make it say "1 treat"
-    //    hint: make a variable for the word, and use an if to change it when treats == 1
+    // Show how many toys Kaya has
+    $("#toys").html(
+        kaya.name + " has " + kaya.toys.length +
+        (kaya.toys.length === 1 ? " toy!" : " toys!")
+    );
 }
 
-
+// Give Kaya a treat
 $("#give-button").click(function() {
     treats = treats + 1;
     updatePage();
 });
 
+// Take away a treat, but don't go below 0
 $("#take-button").click(function() {
-    // OPTIONAL (done early?): don't let treats go below 0!
-    //    hint: only subtract if treats is more than 0
-    treats = treats - 1;
+    if (treats > 0) {
+        treats = treats - 1;
+    }
     updatePage();
 });
 
+// Give Kaya a toy
+$("#toy-button").click(function() {
+    toys = toys + 1;
+    updatePage();
+});
 
-// TODO 5: make the "give kaya a toy" button work (do TODO 4 in dis04.html first!)
-//    1. add a toy to kaya.toys with .push()
-//    2. show how many toys she has in #toys, using kaya.toys.length
-//       e.g.  Kaya has 2 toys!
+// Take away a toy, but don't go below 0
+$("#take-toy-button").click(function() {
+    if (toys > 0) {
+        toys = toys - 1;
+    }
+    updatePage();
+});
+
+// Run once when the page loads
+updatePage();

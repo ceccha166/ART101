@@ -1,4 +1,4 @@
-// The title of our environment
+// Environment Title 
 let environmentTitle = "Luminary Beneath the Stars";
 
 // Things that exist in the Abyss
@@ -26,7 +26,7 @@ let characters = {
     }
 };
 
-// A collection of mysterious clues
+// A collection of clues
 let hiddenSecrets = [
     "The stars above the Abyss never seem to move.",
     "A star marking has appeared on your arm.",
@@ -99,7 +99,7 @@ $("#secret-button").click(function () {
 
     investigationCount = investigationCount + 1;
 
-    // Choose a random clue from the array
+    // Choose a random clue from the options
     let randomPosition = Math.floor(
         Math.random() * hiddenSecrets.length
     );
