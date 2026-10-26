@@ -1,3 +1,4 @@
+
 function askNumber(whatNumber) {
     let userNumber = prompt("Guess 1-10?");
 
