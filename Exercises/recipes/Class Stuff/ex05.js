@@ -1,6 +1,8 @@
-// the clicker button progrm 
+function paintPage (color) {
+$ ("body").css("background-color", color) 
+}
 
-// we create a variable named "count", the initia; value is 0
+paintPage("yellow"); 
 
 let count=0;
 let colorsCount=0; // new line
