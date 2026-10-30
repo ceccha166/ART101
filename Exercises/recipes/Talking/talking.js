@@ -10,9 +10,21 @@ let messagesB=["Terrible", "Color of the background sucks", "Not this one", ];
 $("#character-a").click( function (){
 
 
-    $("chat").append("<jake: "+messagesA[0]+"</p>");
+    $("chat").append("<Baek Hyeon: "+messagesA[counterA]+"</p>");
 
     counterA=counterA+1;
 
-
 });
+
+// when B is clicked
+$("character-b").click( function(){
+
+    $("#chat").append("<p>Eun Woo: "+messagesB[counterB]+"</p>");
+
+    counterB=counterB+1;
+
+
+
+}); 
+
+
