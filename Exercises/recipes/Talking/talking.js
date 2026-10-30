@@ -10,7 +10,9 @@ let messagesB=["Terrible", "Color of the background sucks", "Not this one", ];
 $("#character-a").click( function (){
 
 
-    $("chat").append("<jake: I am speaking I am A</p>");
+    $("chat").append("<jake: "+messagesA[0]+"</p>");
+
+    counterA=counterA+1;
 
 
 });
