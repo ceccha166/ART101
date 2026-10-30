@@ -4,3 +4,13 @@ let messaagesA=["How are you doing", "Sorry to hear that", "What color would you
 
 // B says
 let messagesB=["Terrible", "Color of the background sucks", "Not this one", ];
+
+
+// when A is clicked 
+$("#character-a").click( function (){
+
+
+    $("chat").append("<jake: I am speaking I am A</p>");
+
+
+});
