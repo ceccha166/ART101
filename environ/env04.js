@@ -1,4 +1,4 @@
-// This function receives a mode as its parameter
+// This function will receive a mode as its parameter
 function tuneEnvironment(mode) {
 
     // Check if the user wants calm mode
@@ -15,7 +15,7 @@ function tuneEnvironment(mode) {
         );
     }
 
-    // Otherwise, check for dangerous mode
+    // if not, check for dangerous mode
     else if (mode == "dangerous") {
         $("body").css("background-color", "#260909");
 
@@ -51,7 +51,7 @@ $("#tune-button").click(function () {
     // Make the answer lowercase to accept CALM or Calm too
     chosenMode = chosenMode.toLowerCase().trim();
 
-    // Send the user's answer into our function
+    // Send the user's answer into the function
     tuneEnvironment(chosenMode);
 });
 
