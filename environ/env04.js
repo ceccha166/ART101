@@ -9,8 +9,6 @@ function tuneEnvironment(mode) {
 
         $("#mode-title").html("✦ The Calm Abyss ✦");
 
-        $("picture").html("leo02.jpeg"); 
-
         $("#environment-message").html(
             "Leo relaxes a little. The stars begin to glow softly, " +
             "and the Abyss feels peaceful for once."
