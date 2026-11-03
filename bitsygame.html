@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luminary Beneath the Stars</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #080b20;
+    color: #e8eaff;
+    font-family: monospace;
+  }
+  #game {
+    width: min(92vw, 640px);
+  }
+  canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    border: 3px solid #6f79ba;
+    background: #111638;
+  }
+  #message {
+    min-height: 3em;
+    padding: 12px;
+    line-height: 1.5;
+    background: #171d45;
+    border: 2px solid #6f79ba;
+    margin-top: 10px;
+  }
+  .help {
+    color: #b9c2f5;
+    font-size: 13px;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+<main id="game">
+  <canvas id="screen" width="320" height="320" aria-label="Abyss game"></canvas>
+  <div id="message">You wake beneath a sky with no stars. Use the arrow keys or WASD to move.</div>
+  <div class="help">Move: arrow keys / WASD · Talk or interact: Space / Enter</div>
+</main>
+
+<script>
+(() => {
+  const canvas = document.querySelector("#screen");
+  const ctx = canvas.getContext("2d");
+  const message = document.querySelector("#message");
+
+  const TILE = 20;
+  const COLS = 16;
+  const ROWS = 16;
+
+  // # = wall, . = floor, D = doorway
+  const rooms = [
+    {
+      name: "The Quiet Landing",
+      map: [
+        "################",
+        "#..............#",
+        "#..............#",
+        "#....####......#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#......##......#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "######D#########"
+      ],
+      start: { x: 2, y: 2 },
+      characters: [
+        { x: 5, y: 5, name: "Leo", color: "#f4d08b",
+          lines: [
+            "Leo: You're awake. Good.",
+            "Leo: This place is called the Abyss.",
+            "Leo: Find the glowing shard. It may help us open the way out."
+          ] },
+        { x: 10, y: 5, name: "Yuna", color: "#d5a7ff",
+          lines: [
+            "Yuna: The Abyss changes when people remember it.",
+            "Yuna: Look for a little light near the old stones."
+          ] }
+      ],
+      item: { x: 12, y: 11, name: "glowing shard", found: false }
+    },
+    {
+      name: "The Starless Hall",
+      map: [
+        "################",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..####........#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "#..............#",
+        "################"
+      ],
+      start: { x: 7, y: 13 },
+      characters: [
+        { x: 8, y: 4, name: "Echo", color: "#a9d8ff",
+          lines: [
+            "A quiet voice: The shard remembers the stars.",
+            "A quiet voice: Keep it safe. Your path is not finished."
+          ] }
+      ]
+    }
+  ];
+
+  let roomIndex = 0;
+  let player = { ...rooms[0].start };
+  let dialog = null;
+  let dialogLine = 0;
+  let hasShard = false;
+
+  function currentRoom() {
+    return rooms[roomIndex];
+  }
+
+  function tileAt(x, y) {
+    const room = currentRoom();
+    if (x < 0 || y < 0 || x >= COLS || y >= ROWS) return "#";
+    return room.map[y][x];
+  }
+
+  function drawTile(x, y, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x * TILE, y * TILE, TILE, TILE);
+  }
+
+  function draw() {
+    const room = currentRoom();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let y = 0; y < ROWS; y++) {
+      for (let x = 0; x < COLS; x++) {
+        const tile = room.map[y][x];
+        drawTile(x, y, tile === "#" ? "#252c59" : "#111638");
+
+        if (tile === "#") {
+          ctx.fillStyle = "#414b83";
+          ctx.fillRect(x * TILE + 3, y * TILE + 3, TILE - 6, TILE - 6);
+        } else if (tile === "D") {
+          ctx.fillStyle = "#f4d08b";
+          ctx.fillRect(x * TILE + 4, y * TILE + 2, TILE - 8, TILE - 2);
+          ctx.fillStyle = "#111638";
+          ctx.fillRect(x * TILE + 7, y * TILE + 6, TILE - 14, TILE - 6);
+        }
+      }
+    }
+
+    if (room.item && !room.item.found && !hasShard) {
+      ctx.fillStyle = "#a8f7ff";
+      ctx.beginPath();
+      ctx.moveTo(room.item.x * TILE + 10, room.item.y * TILE + 3);
+      ctx.lineTo(room.item.x * TILE + 17, room.item.y * TILE + 10);
+      ctx.lineTo(room.item.x * TILE + 10, room.item.y * TILE + 17);
+      ctx.lineTo(room.item.x * TILE + 3, room.item.y * TILE + 10);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    room.characters.forEach(character => {
+      ctx.fillStyle = character.color;
+      ctx.fillRect(character.x * TILE + 4, character.y * TILE + 4, 12, 12);
+      ctx.fillStyle = "#111638";
+      ctx.fillRect(character.x * TILE + 7, character.y * TILE + 7, 2, 2);
+      ctx.fillRect(character.x * TILE + 12, character.y * TILE + 7, 2, 2);
+    });
+
+    // Player
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(player.x * TILE + 4, player.y * TILE + 4, 12, 12);
+    ctx.fillStyle = "#6de4ff";
+    ctx.fillRect(player.x * TILE + 7, player.y * TILE + 7, 6, 6);
+
+    ctx.fillStyle = "#b9c2f5";
+    ctx.font = "10px monospace";
+    ctx.fillText(room.name, 8, 12);
+  }
+
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  function findCharacter(x, y) {
+    return currentRoom().characters.find(c => c.x === x && c.y === y);
+  }
+
+  function interact() {
+    if (dialog) {
+      dialogLine++;
+      if (dialogLine < dialog.lines.length) {
+        showMessage(dialog.lines[dialogLine]);
+      } else {
+        dialog = null;
+        showMessage("You are in " + currentRoom().name + ".");
+      }
+      return;
+    }
+
+    const character = findCharacter(player.x, player.y - 1)
+      || findCharacter(player.x, player.y + 1)
+      || findCharacter(player.x - 1, player.y)
+      || findCharacter(player.x + 1, player.y);
+
+    if (character) {
+      dialog = character;
+      dialogLine = 0;
+      showMessage(character.lines[0]);
+      return;
+    }
+
+    const room = currentRoom();
+    if (room.item && !hasShard &&
+        Math.abs(player.x - room.item.x) + Math.abs(player.y - room.item.y) <= 1) {
+      hasShard = true;
+      room.item.found = true;
+      showMessage("You found the glowing shard. It hums softly in your hands.");
+      draw();
+      return;
+    }
+
+    if (roomIndex === 0 && player.y === 15 && player.x === 6) {
+      roomIndex = 1;
+      player = { ...currentRoom().start };
+      showMessage("You step through the doorway into the Starless Hall.");
+      draw();
+      return;
+    }
+
+    showMessage("Nothing happens. Try talking to someone or moving closer to the glowing shard.");
+  }
+
+  function move(dx, dy) {
+    if (dialog) {
+      interact();
+      return;
+    }
+
+    const nx = player.x + dx;
+    const ny = player.y + dy;
+    if (tileAt(nx, ny) === "#") return;
+
+    // Doorway from the first room to the second
+    if (roomIndex === 0 && nx === 6 && ny === 15) {
+      roomIndex = 1;
+      player = { ...currentRoom().start };
+      showMessage("You step through the doorway into the Starless Hall.");
+      draw();
+      return;
+    }
+
+    player = { x: nx, y: ny };
+
+    const room = currentRoom();
+    if (room.item && !hasShard && player.x === room.item.x && player.y === room.item.y) {
+      hasShard = true;
+      room.item.found = true;
+      showMessage("You found the glowing shard. It hums softly in your hands.");
+    } else {
+      showMessage("You are in " + room.name + ".");
+    }
+
+    draw();
+  }
+
+  document.addEventListener("keydown", event => {
+    const key = event.key.toLowerCase();
+    if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(key)) {
+      event.preventDefault();
+    }
+
+    if (key === "arrowup" || key === "w") move(0, -1);
+    else if (key === "arrowdown" || key === "s") move(0, 1);
+    else if (key === "arrowleft" || key === "a") move(-1, 0);
+    else if (key === "arrowright" || key === "d") move(1, 0);
+    else if (key === " " || key === "enter") interact();
+  });
+
+  draw();
+})();
+</script>
+</body>
+</html>
