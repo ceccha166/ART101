@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Abyss Horse Scene</title>
+
+    <link rel="stylesheet" href="env05.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="env05.js" defer></script>
+</head>
+
+<body>
+    <h1>✦ The Abyss Horse Scene ✦</h1>
+    <p>Drag a horse around to hear what it says!</p>
+
+    <div id="horse-scene">
+        <div class="horse" id="mc-horse" draggable="true">
+            <img src="mchorse.jpeg" alt="MC as a horse">
+            <p class="speech">Watch the hair!</p>
+        </div>
+
+        <div class="horse" id="leo-horse" draggable="true">
+            <img src="leohorse.jpeg" alt="Leo as a horse">
+            <p class="speech">What are you doing?</p>
+        </div>
+
+        <div class="horse" id="yuna-horse" draggable="true">
+            <img src="yunahorse.jpeg" alt="Yuna as a horse">
+            <p class="speech">Hehe, that tickles!</p>
+        </div>
+    </div>
+
+    <p id="status">The horses are waiting...</p>
+</body>
+</html>
