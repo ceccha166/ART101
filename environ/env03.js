@@ -1,7 +1,6 @@
-// Environment Title 
 let environmentTitle = "Luminary Beneath the Stars";
 
-// Things that exist in the Abyss
+// Things that are in the Abyss
 let environmentElements = [
     "Suspicious people",
     "Blank white dark skies",
@@ -26,7 +25,7 @@ let characters = {
     }
 };
 
-// A collection of clues
+// Clues
 let hiddenSecrets = [
     "The stars above the Abyss never seem to move.",
     "A star marking has appeared on your arm.",

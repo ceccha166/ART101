@@ -1,5 +1,3 @@
-
-
 body {
     background-image: url(LBTS.jpeg);
     background-repeat: no-repeat;
@@ -30,7 +28,7 @@ h2 {
     color: #49366b;
 }
 
-/* Section 1: Environment and vibes */
+/* Environment */
 #environment {
     background: rgba(240, 235, 240, 0.9);
     color: #29243b;
@@ -53,7 +51,7 @@ h2 {
     line-height: 1.8;
 }
 
-/* Section 2: Main character scene */
+/* Main character scene */
 #main-scene {
     display: flex;
     gap: 25px;
@@ -102,7 +100,7 @@ h2 {
     border-radius: 8px;
 }
 /* Java Script */
-/* Section 3: The Abyss Archive */
+/* The Abyss Archive */
 #abyss-archive {
     background: rgba(240, 235, 250, 0.95);
     color: #29243b;
