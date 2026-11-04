@@ -8,7 +8,7 @@ $(".horse").on("dragstart", function (event) {
 });
 
 $("#horse-scene").on("dragover", function (event) {
-    // Allow a horse to be dropped inside the scene
+    // Horse will be dropped in the scene, allow the drop
     event.preventDefault();
 });
 
@@ -32,7 +32,7 @@ $("#horse-scene").on("drop", function (event) {
         top: newTop + "px"
     });
 
-    // Show the correct horse's dialogue
+    // Show the current horse's dialogue
     $(draggedHorse).find(".speech").fadeIn();
 
     if (draggedHorse.id == "mc-horse") {
