@@ -1,0 +1,7 @@
+/* Apply these styles only while #element has the changed class. */
+#element.changed {
+    border-color: #333;
+    border-radius: 50%;
+    background: #777;
+    color: white;
+}

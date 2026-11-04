@@ -1,4 +1,3 @@
-// This function will receive a mode as its parameter
 function tuneEnvironment(mode) {
 
     // Check if the user wants calm mode
