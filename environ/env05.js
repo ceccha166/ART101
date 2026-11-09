@@ -3,7 +3,7 @@ let draggedHorse = null;
 $(".horse").on("dragstart", function (event) {
     draggedHorse = this;
 
-    // Hide the speech bubble while dragging
+    // Hide the speech bubble while dragging cute horse chud
     $(this).find(".speech").hide();
 });
 
